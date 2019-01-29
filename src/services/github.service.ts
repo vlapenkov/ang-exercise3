@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IResponse } from '../app/interfaces/iresponse';
 import { empty, of } from 'rxjs';
 
@@ -13,21 +13,30 @@ import { first, tap, filter, map } from 'rxjs/operators';
 })
 export class GithubService {
 
+  searchText: string; 
   baseUrl ="https://api.github.com/search";
+   
   
-  public  getUsersResponse2(text:string)
-  {
-    return text;
-  }
+    subject = new Subject<IResponse>();
 
-  public  getUsersResponse(searchText:string)//:Observable<IResponse>
-  {
-    if (searchText.length<=3) return empty();
-    const url=`${this.baseUrl}/users?q=${searchText}`;
+   constructor(private http: HttpClient) { 
+  
+       }
 
-    console.log(url);
-       
-   return this.http.get(url).pipe(debounceTime(1000));
-  }
-  constructor(private http: HttpClient) {     }
+
+public setSearch(newSearchText:string):void{
+  if (newSearchText.length<=3) return;
+  this.searchText= newSearchText;
+  const url=`${this.baseUrl}/users?q=${newSearchText}`;
+  this.http.get<IResponse>(url).pipe(debounceTime(1000)).subscribe(
+    res=> this.subject.next(res));
+  
+}
+
+public getResults():Observable<IResponse>
+{
+ return  this.subject.asObservable();
+}
+
+
 }

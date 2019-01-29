@@ -1,12 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
+import { QuantComponent } from './components/quant/quant.component';
+import { ListComponent } from './components/list/list.component';
+import { ListitemComponent } from './components/listitem/listitem.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    QuantComponent,
+    ListComponent,
+    ListitemComponent
   ],
   imports: [
     BrowserModule,
