@@ -1,1 +1,1 @@
-<p [ngClass]="{'isOdd': odd}"> {{index}} <ng-content></ng-content></p>
+<p [ngClass]="{'isOdd': odd}"> {{index}} <ng-content></ng-content> <a [attr.href]="user.avatar_url"> <img style="height:100px;" [attr.src]="user.avatar_url"/> {{user.avatar_url}}</a></p>

@@ -1,9 +1,11 @@
-<div>{{someVar}}</div>
+
+<hr/>
+
 <div *ngIf="userItems; else loadingBlock">
   <ul>
   <li *ngFor="let user of userItems ; index as i; odd as isOdd">
   
-   <app-listitem [odd]="isOdd" [index]="i+1">{{user.login}}</app-listitem>
+   <app-listitem [user]="user" [odd]="isOdd" [index]="i+1">{{user.login}}</app-listitem>
    </li>
   </ul>
   </div>

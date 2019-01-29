@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IUserItem } from '../../interfaces/iresponse';
 
 @Component({
   selector: 'app-listitem',
@@ -17,4 +18,7 @@ export class ListitemComponent implements OnInit {
   
   @Input()
   odd:boolean;
+  
+  @Input()
+  user:IUserItem; 
 }

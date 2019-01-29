@@ -22,7 +22,7 @@ export class ListComponent implements OnInit,OnDestroy {
       {
        
        this.userItems = result.items;
-       console.log('triggered');
+       console.log(this.userItems);
      
       }
     )

@@ -7,6 +7,10 @@ import { SearchComponent } from './components/search/search.component';
 import { QuantComponent } from './components/quant/quant.component';
 import { ListComponent } from './components/list/list.component';
 import { ListitemComponent } from './components/listitem/listitem.component';
+import { InfoComponent } from './components/info/info.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes';
+import { ListcontainerComponent } from './listcontainer/listcontainer.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,14 @@ import { ListitemComponent } from './components/listitem/listitem.component';
     SearchComponent,
     QuantComponent,
     ListComponent,
-    ListitemComponent
+    ListitemComponent,
+    InfoComponent,
+    ListcontainerComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
