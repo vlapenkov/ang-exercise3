@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from 'src/services/github.service';
+import { IUserItem } from 'src/app/interfaces/iresponse';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  checked=false;
+users: IUserItem[]=[];
+  constructor(private service: GithubService) { }
 
   ngOnInit() {
+     this.service.getResults().subscribe(response=> 
+      {
+        
+if (response.total_count>0)        this.users =response.items});
   }
 
 }

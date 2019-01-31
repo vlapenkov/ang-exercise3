@@ -20,7 +20,7 @@ export class ListComponent implements OnInit,OnDestroy {
   this.subscription=  this.service.getResults().subscribe(
       (result:IResponse)=> 
       {
-       
+       if(result!==null && result.total_count>0)
        this.userItems = result.items;
        console.log(this.userItems);
      

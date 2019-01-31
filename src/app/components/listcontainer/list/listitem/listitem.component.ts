@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IUserItem } from '../../interfaces/iresponse';
+import { IUserItem } from '../../../../interfaces/iresponse';
 
 @Component({
   selector: 'app-listitem',

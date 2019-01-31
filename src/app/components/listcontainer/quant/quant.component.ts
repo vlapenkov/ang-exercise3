@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IResponse } from '../../interfaces/iresponse';
+import { IResponse } from '../../../interfaces/iresponse';
 import { GithubService } from 'src/services/github.service';
 
 @Component({
@@ -18,9 +18,9 @@ export class QuantComponent implements OnInit {
     this.service.getResults().subscribe(
         (result:IResponse)=> 
         {
-         
+         if (result && result.total_count)
          this.count=result.items.length;
-         console.log('triggered');
+         
        
         }
       )

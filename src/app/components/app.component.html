@@ -1,8 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
-<a [routerLink]="['list']">users</a>
-<a [routerLink]="['info']">infos</a>
+<a [routerLink]="['list']" routerLinkActive="active">users</a>
+<a [routerLink]="['form']" routerLinkActive="active">form</a>
+<a [routerLink]="['info']" routerLinkActive="active">infos</a>
+<app-search></app-search>
+
+<div class="container">
+        <div class="row">
+<div class="col-6">
+        <h3>outlet1</h3>
 <router-outlet></router-outlet>
+</div>
+<div class="col-6">
+    <h3>outlet2</h3>
+        <router-outlet name="window2"></router-outlet>
+        </div>
 
-
+</div></div>
