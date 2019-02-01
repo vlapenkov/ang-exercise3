@@ -1,20 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
-<a [routerLink]="['list']" routerLinkActive="active">users</a>
-<a [routerLink]="['form']" routerLinkActive="active">form</a>
-<a [routerLink]="['info']" routerLinkActive="active">infos</a>
+<a class="btn" [routerLink]="['list']" routerLinkActive="btn-primary">users</a>
+<a class="btn" [routerLink]="['form']" routerLinkActive="btn-primary">form</a>
+<a class="btn" [routerLink]="['info']" routerLinkActive="btn-primary">infos</a>
+<a class="btn" [routerLink]="['observables']" routerLinkActive="btn-primary">Observables</a>
 <app-search></app-search>
 
 <div class="container">
         <div class="row">
-<div class="col-6">
+<div class="col-10">
         <h3>outlet1</h3>
 <router-outlet></router-outlet>
 </div>
-<div class="col-6">
+<div class="col-2">
     <h3>outlet2</h3>
         <router-outlet name="window2"></router-outlet>
-        </div>
+        </div> 
 
 </div></div>

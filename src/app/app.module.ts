@@ -17,6 +17,7 @@ import { UserResolveService } from '../services/userresolve.service';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ObservableTestComponent } from './components/observable-test/observable-test.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    // InfoComponent,
     ListcontainerComponent,
     UserComponent,
-    FormComponent
+    FormComponent,
+    ObservableTestComponent
   ],
   imports: [
     BrowserModule,

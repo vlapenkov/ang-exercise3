@@ -6,6 +6,8 @@ import { ListComponent } from "./components/listcontainer/list/list.component";
 import { UserComponent } from "./components/listcontainer/user/user.component";
 import { UserResolveService } from "../services/userresolve.service";
 import { FormComponent } from "./components/form/form.component";
+import { Observable } from "rxjs";
+import { ObservableTestComponent } from "./components/observable-test/observable-test.component";
 
 
 
@@ -24,6 +26,11 @@ loadChildren:"./info/info.module#InfoModule"
     path:'form',
     component:FormComponent
     },
+
+    {
+        path:'observables',
+        component:ObservableTestComponent
+        },
 {
 path:'list',
 component:ListcontainerComponent,
